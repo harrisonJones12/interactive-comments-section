@@ -14,17 +14,25 @@ async function getData() {
 
 getData();
 
-const setUpComment = (commentsObj: object) => {
+interface comment {
+  id: number;
+  content: string;
+  score: number;
+  user: { image: object; username: string };
+}
+
+const setUpComment = (commentsObj: Array<object>) => {
   const { comments }: any = commentsObj;
 
-  comments.forEach((comment: object) => {
+  comments.forEach((comment: comment) => {
+    console.log("comment", comment);
     const mainCardDiv = document.createElement("div");
 
     const userNameSpan = document.createElement("span");
 
     userNameSpan.id = "username";
     userNameSpan.className = "username-of-comment-poster";
-    console.log(comment);
+    userNameSpan.append(comment.user.username);
 
     mainCardDiv.className = "card-main";
     mainCardDiv.id = "card-main-container";

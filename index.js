@@ -27,11 +27,12 @@ getData();
 const setUpComment = (commentsObj) => {
     const { comments } = commentsObj;
     comments.forEach((comment) => {
+        console.log("comment", comment);
         const mainCardDiv = document.createElement("div");
         const userNameSpan = document.createElement("span");
         userNameSpan.id = "username";
         userNameSpan.className = "username-of-comment-poster";
-        console.log(comment);
+        userNameSpan.append(comment.user.username);
         mainCardDiv.className = "card-main";
         mainCardDiv.id = "card-main-container";
         const mainContainer = document.getElementById("main-page-container");
