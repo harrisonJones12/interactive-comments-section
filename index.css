@@ -1,0 +1,15 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-main {
+  height: 343px;
+  width: 256px;
+}
+
+.users-image {
+  height: 32px;
+  width: 32px;
+}
