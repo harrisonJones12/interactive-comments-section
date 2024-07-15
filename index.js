@@ -55,13 +55,22 @@ const setUpComment = (commentsObj) => {
         const mainContainer = document.getElementById("main-page-container");
         mainContainer === null || mainContainer === void 0 ? void 0 : mainContainer.append(mainCardDiv);
         const getMainCardDiv = document.querySelectorAll(".card-main");
-        const plusLogoSvgTag = document.createElement("svg");
-        // TODO append plusLogoImageTag element to scoreTrackerMain
-        const plusLogoImageTag = document.createElement("image");
+        // const plusLogoSvgTag = document.createElement("svg");
+        const plusLogoImageTag = document.createElement("img");
         plusLogoImageTag.id = "plus";
-        plusLogoImageTag.className = "plus-icon";
-        plusLogoImageTag.href = "./images/icon-plus.svg";
-        plusLogoSvgTag.append(plusLogoImageTag);
+        plusLogoImageTag.className = "card-plus-icon";
+        plusLogoImageTag.src = "./images/icon-plus.svg";
+        // plusLogoSvgTag.append(plusLogoImageTag);
+        const commentScore = document.createElement("span");
+        commentScore.id = "score";
+        commentScore.className = "card-comment-score";
+        commentScore.append(comment.score.toString());
+        // const plusLogoSvgTag = document.createElement("svg");
+        const minusLogoImageTag = document.createElement("img");
+        minusLogoImageTag.id = "plus";
+        minusLogoImageTag.className = "plus-icon";
+        minusLogoImageTag.src = "./images/icon-minus.svg";
+        // plusLogoSvgTag.append(plusLogoImageTag)
         getMainCardDiv.forEach((cardDiv) => cardDiv.append(cardUserContainer));
         const getUserInfoContainer = document.querySelectorAll(".user-info-container");
         getUserInfoContainer.forEach((cardDiv) => {
@@ -69,6 +78,9 @@ const setUpComment = (commentsObj) => {
             cardDiv.append(userNameSpan);
             cardDiv.append(createdOnSpan);
             cardDiv.append(cardComment);
+            cardDiv.append(plusLogoImageTag);
+            cardDiv.append(commentScore);
+            cardDiv.append(minusLogoImageTag);
         });
     });
 };

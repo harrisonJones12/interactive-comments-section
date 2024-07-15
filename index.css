@@ -10,10 +10,12 @@ body {
 
 .card-main {
   background-color: hsl(0, 0%, 100%);
-  height: 343px;
+  height: auto;
   width: 256px;
   /** find correct margin */
   margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .users-image {
@@ -22,5 +24,5 @@ body {
 }
 
 .card-comment-content {
-  margin: 20px 0 0 0;
+  margin: 20px 0 20px 0;
 }
