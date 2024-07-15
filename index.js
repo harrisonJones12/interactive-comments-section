@@ -45,15 +45,30 @@ const setUpComment = (commentsObj) => {
         const cardUserContainer = document.createElement("div");
         cardUserContainer.id = "user-info";
         cardUserContainer.className = "user-info-container";
+        const cardComment = document.createElement("p");
+        cardComment.id = "comment-text ";
+        cardComment.className = "card-comment-content";
+        cardComment.append(comment.content);
+        const scoreTrackerMain = document.createElement("div");
+        scoreTrackerMain.id = "score-tracker-main";
+        scoreTrackerMain.className = "score-tracker-main-container";
         const mainContainer = document.getElementById("main-page-container");
         mainContainer === null || mainContainer === void 0 ? void 0 : mainContainer.append(mainCardDiv);
         const getMainCardDiv = document.querySelectorAll(".card-main");
+        const plusLogoSvgTag = document.createElement("svg");
+        // TODO append plusLogoImageTag element to scoreTrackerMain
+        const plusLogoImageTag = document.createElement("image");
+        plusLogoImageTag.id = "plus";
+        plusLogoImageTag.className = "plus-icon";
+        plusLogoImageTag.href = "./images/icon-plus.svg";
+        plusLogoSvgTag.append(plusLogoImageTag);
         getMainCardDiv.forEach((cardDiv) => cardDiv.append(cardUserContainer));
         const getUserInfoContainer = document.querySelectorAll(".user-info-container");
         getUserInfoContainer.forEach((cardDiv) => {
             cardDiv.append(usersImage);
             cardDiv.append(userNameSpan);
             cardDiv.append(createdOnSpan);
+            cardDiv.append(cardComment);
         });
     });
 };
